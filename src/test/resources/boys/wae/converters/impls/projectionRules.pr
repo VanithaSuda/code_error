@@ -1,0 +1,16 @@
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+rule boys.wae.TestAnnotation id:testRule {
+	nodes = {
+		testUri uri(<a>) testFeature .
+		testLiteralString literal^^xsd:string(<a>) testFeature .
+		testLiteralEn literal@en(<a>) testFeature .
+		
+	}
+	graph = {
+		_:n0 rdf:value $testUri .
+		_:n0 rdf:value $testLiteralString .
+		_:n0 rdf:value $testLiteralEn .
+	}
+}
